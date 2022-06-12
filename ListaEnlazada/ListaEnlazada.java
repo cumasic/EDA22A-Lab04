@@ -25,6 +25,21 @@ public class ListaEnlazada<E> {
 			tamaño++;
 		}
 	}
+	public void insertPos(E x,int indice) {
+		if(indice<=tamaño) {
+	        if(indice==0)
+	        	this.root = new Node<E>(x,this.root);
+	        else {
+	            Node<E> aux=this.get(indice-1);
+	            aux.setNext(new Node<E>(x,aux.getNext()));
+	        }
+	        tamaño++;
+	    }
+	}
+	public E getInd(int indice) {
+	    Node<E> aux = get(indice);
+	    return aux.getData();
+	}
 	public Node<E> get(int indice) {
 	    Node<E> aux = root;
 	    for(int i=0;i<indice;i++)
