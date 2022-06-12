@@ -8,9 +8,18 @@ public class TestDoble {
 		list.insert(17);
 		list.insert(7);
 		list.insert(35);
-        System.out.println(list);
+        list.insert(27);
+		list.insert(10);
+		list.insert(50);
+		list.insert(30);
+		list.insert(17);
+		System.out.println("Lista no ordenada: "+list);
         insertionSort(list);
-        System.out.println(list);
+        System.out.println("Lista ordenada: "+list);
+        DobleListaEnlazada<Integer> peorCaso = generarPeorCaso(10);
+        System.out.println("Lista no ordenada(peor caso posible): "+peorCaso);
+        insertionSort(peorCaso);
+        System.out.println("Lista ordenada(peor caso posible): "+ peorCaso);
     }
     public static DobleListaEnlazada<Integer> generarPeorCaso(int num) {
 		DobleListaEnlazada<Integer> peorCaso = new DobleListaEnlazada<Integer>();
