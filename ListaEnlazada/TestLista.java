@@ -4,13 +4,17 @@ public class TestLista {
     public static void main(String[]args) {
         ListaEnlazada<Integer> list = new ListaEnlazada<Integer>();
 		list.insert(10);
-		list.insert(17);
-		list.insert(18);
+		list.insert(8);
 		list.insert(19);
+		list.insert(18);
 		list.insert(9);
 		System.out.println("Lista no ordenada: "+list);
         insertionSort(list);
         System.out.println("Lista ordenada: "+list);
+        ListaEnlazada<Integer> peorCaso = generarPeorCaso(5);
+        System.out.println("Lista no ordenada(peor caso posible): "+peorCaso);
+        insertionSort(peorCaso);
+        System.out.println("Lista ordenada(peor caso posible): "+ peorCaso);
     }
     public static ListaEnlazada<Integer> generarPeorCaso(int num) {
 		ListaEnlazada<Integer> peorCaso = new ListaEnlazada<Integer>();
