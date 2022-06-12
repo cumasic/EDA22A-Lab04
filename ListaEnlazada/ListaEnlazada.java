@@ -7,6 +7,24 @@ public class ListaEnlazada<E> {
 	public ListaEnlazada() {
 		this.root = null;
 	}
+    public boolean isEmpty(){
+		return this.root == null;
+	}
+	public int length() {
+		return tamaño;
+	}
+	public void insert(E x) {
+		if(isEmpty()) {
+			this.root = new Node<E>(x);
+			tamaño++;
+		}
+		else {
+			Node<E> aux = this.root;
+			for(;aux.getNext() != null; aux = aux.getNext());
+			aux.setNext(new Node<E>(x));
+			tamaño++;
+		}
+	}
 	public Node<E> get(int indice) {
 	    Node<E> aux = root;
 	    for(int i=0;i<indice;i++)
