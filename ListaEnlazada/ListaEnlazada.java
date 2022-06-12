@@ -42,4 +42,11 @@ public class ListaEnlazada<E> {
 	        tamaño--;
 	    }
 	}
+    public String toString() {
+		String str = "";
+		for(Node<E> aux = this.root; aux != null;aux = aux.getNext()) {
+			str += aux.getData() + ", ";
+		}
+		return str;
+	}
 }
